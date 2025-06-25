@@ -1,5 +1,5 @@
-`ifndef JTAGControllerDeviceAGENTCONFIG_INCLUDED_
-`define JTAGControllerDeviceAGENTCONFIG_INCLUDED_
+`ifndef JTAGCONTROLLERDEVICEAGENTCONFIG_INCLUDED_
+`define JTAGCONTROLLERDEVICEAGENTCONFIG_INCLUDED_
 
 class JtagControllerDeviceAgentConfig extends uvm_object;
 

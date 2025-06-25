@@ -1,5 +1,5 @@
-`ifndef JTAGControllerDeviceSEQITEMCONVERTER_INCLUDED_
-`define JTAGControllerDeviceSEQITEMCONVERTER_INCLUDED_
+`ifndef JTAGCONTROLLERDEVICESEQITEMCONVERTER_INCLUDED_
+`define JTAGCONTROLLERDEVICESEQITEMCONVERTER_INCLUDED_
 
 class JtagControllerDeviceSeqItemConverter extends uvm_object;
   `uvm_object_utils(JtagControllerDeviceSeqItemConverter)

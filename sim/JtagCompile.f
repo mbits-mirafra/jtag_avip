@@ -6,6 +6,7 @@
 +incdir+../../src/hvlTop/jtagTargetDeviceAgent
 +incdir+../../src/hvlTop/jtagTargetDeviceAgent/jtagTargetDeviceSequences/
 +incdir+../../src/hvlTop/tb
++incdir+../../src/hvlTop/tb/test
 ../../src/globals/JtagGlobalPkg.sv
 ../../src/hvlTop/jtagControllerDeviceAgent/JtagControllerDevicePkg.sv
 ../../src/hvlTop/jtagTargetDeviceAgent/JtagTargetDevicePkg.sv
@@ -13,7 +14,7 @@
 ../../src/hvlTop/jtagTargetDeviceAgent/jtagTargetDeviceSequences/JtagTargetDeviceSequencePkg.sv
 ../../src/hvlTop/jtagEnv/JtagEnvPkg.sv
 ../../src/hvlTop/tb/jtagVirtualSequences/JtagVirtualSequencePkg.sv
-../../src/hvlTop/tb/JtagBaseTestPkg.sv
+../../src/hvlTop/tb/test/JtagBaseTestPkg.sv
 ../../src/hdlTop/jtagInterface/JtagInterface.sv
 ../../src/hdlTop/jtagControllerDeviceAgentBfm/JtagControllerDeviceDriverBfm.sv
 ../../src/hdlTop/jtagControllerDeviceAgentBfm/JtagControllerDeviceMonitorBfm.sv

@@ -1,5 +1,5 @@
-`ifndef JTAGControllerDeviceCOVERAGE_INCLUDED_
-`define JTAGControllerDeviceCOVERAGE_INCLUDED_
+`ifndef JTAGCONTROLLERDEVICECOVERAGE_INCLUDED_
+`define JTAGCONTROLLERDEVICECOVERAGE_INCLUDED_
 
 class JtagControllerDeviceCoverage extends uvm_subscriber#(JtagControllerDeviceTransaction);
   `uvm_component_utils(JtagControllerDeviceCoverage)

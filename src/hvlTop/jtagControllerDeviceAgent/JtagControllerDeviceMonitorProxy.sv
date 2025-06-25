@@ -1,5 +1,5 @@
-`ifndef UARTControllerDeviceMONITOR_INCLUDED_
-`define UARTControllerDeviceMONITOR_INCLUDED_
+`ifndef UARTCONTROLLERDEVICEMONITOR_INCLUDED_
+`define UARTCONTROLLERDEVICEMONITOR_INCLUDED_
 
 class JtagControllerDeviceMonitor extends uvm_monitor; 
   `uvm_component_utils(JtagControllerDeviceMonitor)

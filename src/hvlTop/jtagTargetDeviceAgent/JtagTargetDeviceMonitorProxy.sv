@@ -1,5 +1,5 @@
-`ifndef JTAGTargetDeviceMONITOR_INCLUDED_
-`define JTAGTargetDeviceMONITOR_INCLUDED_
+`ifndef JTAGTARGETDEVICEMONITORPROXY_INCLUDED_
+`define JTAGTARGETDEVICEMONITORPROXY_INCLUDED_
 
 class JtagTargetDeviceMonitor extends uvm_monitor; 
   `uvm_component_utils(JtagTargetDeviceMonitor)

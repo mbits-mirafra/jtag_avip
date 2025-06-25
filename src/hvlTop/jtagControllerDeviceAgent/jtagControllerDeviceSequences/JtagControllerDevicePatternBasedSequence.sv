@@ -1,6 +1,6 @@
 
-`ifndef JTAGControllerDevicePATTERNBASEDSEQUENCE_INCLUDED_
-`define JTAGControllerDevicePATTERNBASEDSEQUENCE_INCLUDED_
+`ifndef JTAGCONTROLLERDEVICEPATTERNBASEDSEQUENCE_INCLUDED_
+`define JTAGCONTROLLERDEVICEPATTERNBASEDSEQUENCE_INCLUDED_
 
 class JtagControllerDevicePatternBasedSequence extends JtagControllerDeviceBaseSequence;
   `uvm_object_utils(JtagControllerDevicePatternBasedSequence)

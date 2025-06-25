@@ -1,5 +1,5 @@
-`ifndef JTAGTargetDeviceAGENT_INCLUDED_
-`define JTAGTargetDeviceAGENT_INCLUDED_
+`ifndef JTAGTARGETDEVICEAGENT_INCLUDED_
+`define JTAGTARGETDEVICEAGENT_INCLUDED_
 
 class JtagTargetDeviceAgent extends uvm_agent;
   `uvm_component_utils(JtagTargetDeviceAgent)

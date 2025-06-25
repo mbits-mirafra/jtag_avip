@@ -1,5 +1,5 @@
-`ifndef JTAGControllerDeviceTRANSACTION_INCLUDED_
-`define JTAGControllerDeviceTRANSACTION_INCLUDED_
+`ifndef JTAGCONTROLLERDEVICETRANSACTION_INCLUDED_
+`define JTAGCONTROLLERDEVICETRANSACTION_INCLUDED_
 
 class JtagControllerDeviceTransaction extends uvm_sequence_item;
 

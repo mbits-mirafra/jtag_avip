@@ -1,5 +1,5 @@
-`ifndef JTAGTargetDeviceDRIVER_INCLUDED_
-`define JTAGTargetDeviceDRIVER_INCLUDED_
+`ifndef JTAGTARGETDEVICEDRIVERPROXY_INCLUDED_
+`define JTAGTARGETDEVICEDRIVERPROXY_INCLUDED_
 
 class JtagTargetDeviceDriver extends uvm_driver#(JtagTargetDeviceTransaction);
   `uvm_component_utils(JtagTargetDeviceDriver)

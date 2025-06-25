@@ -1,7 +1,0 @@
-var g_db_data = [
-{dummy:0},
-{name:'JtagTargetDeviceCoverGroup',f:1,type:6,id:1218,tb:'13',h:'5',m:'8',hp:'38.46%',cov:['39.58%','R'],g:'100.00%',gp:['39.58%','R'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/JtagTargetDevicePkg/JtagTargetDeviceCoverage',parent:'1208'},
-{name:'JtagControllerDeviceCoverGroup',f:1,type:6,id:1361,tb:'13',h:'5',m:'8',hp:'38.46%',cov:['39.58%','R'],g:'100.00%',gp:['39.58%','R'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/JtagControllerDevicePkg/JtagControllerDeviceCoverage',parent:'1349'},
-{name:'JtagTargetDeviceCoverGroup',f:1,type:6,id:1891,tb:'13',h:'5',m:'8',hp:'38.46%',cov:['39.58%','R'],g:'100.00%',gp:['39.58%','R'],opts:[[],['merge_instance','true']],hdlPath:'work.JtagTargetDevicePkg::JtagTargetDeviceCoverage',parent:'1881'},
-{name:'JtagControllerDeviceCoverGroup',f:1,type:6,id:2117,tb:'13',h:'5',m:'8',hp:'38.46%',cov:['39.58%','R'],g:'100.00%',gp:['39.58%','R'],opts:[[],['merge_instance','true']],hdlPath:'work.JtagControllerDevicePkg::JtagControllerDeviceCoverage',parent:'2105'}];
-processConsCovergroupsData(g_db_data);

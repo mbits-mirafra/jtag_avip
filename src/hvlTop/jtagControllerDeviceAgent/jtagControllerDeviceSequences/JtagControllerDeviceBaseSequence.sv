@@ -1,6 +1,5 @@
-`ifndef JTAGControllerDeviceBASESEQUENCE_INCLUDED_
-`define JTAGControllerDeviceBASESEQUENCE_INCLUDED_
-
+`ifndef JTAGCONTROLLERDEVICEBASESEQUENCE_INCLUDED_`define JTAGControllerDeviceBASESEQUENCE_INCLUDED_
+`define JTAGCONTROLLERDEVICEBASESEQUENCE_INCLUDED_
 class JtagControllerDeviceBaseSequence extends uvm_sequence#(JtagControllerDeviceTransaction);
   `uvm_object_utils(JtagControllerDeviceBaseSequence) 
 

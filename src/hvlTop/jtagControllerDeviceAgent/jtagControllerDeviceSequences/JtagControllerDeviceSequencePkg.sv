@@ -1,5 +1,5 @@
-`ifndef JTAGControllerDeviceSEQUENCEPKG_INCLUDED_
-`define JTAGControllerDeviceSEQUENCEPKG_INCLUDED_
+`ifndef JTAGCONTROLLERDEVICESEQUENCEPKG_INCLUDED_
+`define JTAGCONTROLLERDEVICESEQUENCEPKG_INCLUDED_
 
 package JtagControllerDeviceSequencePkg;
   import uvm_pkg :: *;

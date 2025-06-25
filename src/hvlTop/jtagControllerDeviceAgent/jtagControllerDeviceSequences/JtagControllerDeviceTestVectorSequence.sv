@@ -1,5 +1,5 @@
-`ifndef JTAGControllerDeviceTESTVECTORSEQUENCE_INCLUDED_
-`define JTAGControllerDeviceTESTVECTORSEQUENCE_INCLUDED_
+`ifndef JTAGCONTROLLERDEVICETESTVECTORSEQUENCE_INCLUDED_
+`define JTAGCONTROLLERDEVICETESTVECTORSEQUENCE_INCLUDED_
 
 class JtagControllerDeviceTestVectorSequence extends JtagControllerDeviceBaseSequence;
   `uvm_object_utils(JtagControllerDeviceTestVectorSequence)

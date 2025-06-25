@@ -1,5 +1,5 @@
-`ifndef JTAGTargetDeviceEQUENCER_INCLUDED_
-`define JTAGTargetDeviceSEQUENCER_INCLUDED_
+`ifndef JTAGTARGETDEVICESEQUENCER_INCLUDED_
+`define JTAGTARGETDEVICESEQUENCER_INCLUDED_
 
 class JtagTargetDeviceSequencer extends uvm_sequencer #(JtagTargetDeviceTransaction);
   `uvm_component_utils(JtagTargetDeviceSequencer)

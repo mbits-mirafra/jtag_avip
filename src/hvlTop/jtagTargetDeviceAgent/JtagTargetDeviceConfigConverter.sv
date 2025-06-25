@@ -1,5 +1,5 @@
-`ifndef JTAGTargetDeviceCONFIGCONVERTER_INCLUDED_
-`define JTAGTargetDeviceCONFIGCONVERTER_INCLUDED_
+`ifndef JTAGTARGETDEVICECONFIGCONVERTER_INCLUDED_
+`define JTAGTARGETDEVICECONFIGCONVERTER_INCLUDED_
 
 class JtagTargetDeviceConfigConverter extends uvm_object;
   `uvm_object_utils(JtagTargetDeviceConfigConverter)

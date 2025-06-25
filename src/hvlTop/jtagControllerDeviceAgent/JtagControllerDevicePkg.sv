@@ -1,5 +1,5 @@
-`ifndef JTAGControllerDevicePKG_INCLUDED_
-`define JTAGControllerDevicePKG_INCLUDED_
+`ifndef JTAGCONTROLLERDEVICEPKG_INCLUDED_
+`define JTAGCONTROLLERDEVICEPKG_INCLUDED_
 
 package JtagControllerDevicePkg;
   `include "uvm_macros.svh"

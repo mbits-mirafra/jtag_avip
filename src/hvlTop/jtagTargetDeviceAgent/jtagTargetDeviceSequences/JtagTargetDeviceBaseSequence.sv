@@ -1,5 +1,5 @@
-`ifndef JTAGTargetDeviceBASESEQUENCE_INCLUDED_
-`define JTAGTargetDeviceBASESEQUENCE_INCLUDED_
+`ifndef JTAGTARGETDEVICEBASESEQUENCE_INCLUDED_
+`define JTAGTARGETDEVICEBASESEQUENCE_INCLUDED_
 
 class JtagTargetDeviceBaseSequence extends uvm_sequence#(JtagTargetDeviceTransaction);
   `uvm_object_utils(JtagTargetDeviceBaseSequence) 

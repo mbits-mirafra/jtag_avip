@@ -1,5 +1,5 @@
-`ifndef JTAGControllerDeviceDRIVER_INCLUDED_
-`define JTAGControllerDeviceDRIVER_INCLUDED_
+`ifndef JTAGCONTROLLERDEVICEDRIVERPROXY_INCLUDED_
+`define JTAGCONTROLLERDEVICEDRIVERPROXY_INCLUDED_
 
 class JtagControllerDeviceDriver extends uvm_driver#(JtagControllerDeviceTransaction);
   `uvm_component_utils(JtagControllerDeviceDriver)

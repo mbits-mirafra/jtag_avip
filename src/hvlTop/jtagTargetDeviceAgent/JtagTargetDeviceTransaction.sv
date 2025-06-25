@@ -1,5 +1,5 @@
-`ifndef JTAGTargetDeviceTRANSACTION_INCLUDED_
-`define JTAGTargetDeviceTRANSACTION_INCLUDED_
+`ifndef JTAGTARGETDEVICETRANSACTION_INCLUDED_
+`define JTAGTARGETDEVICETRANSACTION_INCLUDED_
 
 class JtagTargetDeviceTransaction extends uvm_sequence_item;
 
