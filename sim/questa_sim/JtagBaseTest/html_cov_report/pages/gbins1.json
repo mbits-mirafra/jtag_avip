@@ -1,0 +1,20 @@
+var g_data = {
+c1219:[4,'JtagTestVector_CP',[],,'1218',1,1,'JtagTargetDeviceCoverGroup','1208','/JtagTargetDevicePkg/JtagTargetDeviceCoverage',[[],[0,'1','9',,'low_range'],[0,'1','0',1,'mid_range'],[0,'1','9',,'high_range']],[]],
+c1220:[4,'JTAG_TESTVECTOR_WIDTH',[],,'1218',1,1,'JtagTargetDeviceCoverGroup','1208','/JtagTargetDevicePkg/JtagTargetDeviceCoverage',[[],[0,'1','0',1,'TDO_WIDTH_8'],[0,'1','0',1,'TDO_WIDTH_16'],[0,'1','0',1,'TDO_WIDTH_24'],[0,'1','10',,'TDI_WIDTH_32']],[]],
+c1221:[4,'JTAG_INSTRUCTION_WIDTH',[],,'1218',1,1,'JtagTargetDeviceCoverGroup','1208','/JtagTargetDevicePkg/JtagTargetDeviceCoverage',[[],[0,'1','10',,'INSTRUCTION_WIDTH_3'],[0,'1','0',1,'INSTRUCTION_WIDTH_4'],[0,'1','0',1,'INSTRUCTION_WIDTH_5']],[]],
+c1222:[4,'JTAG_INSTRUCTION',[],,'1218',1,1,'JtagTargetDeviceCoverGroup','1208','/JtagTargetDevicePkg/JtagTargetDeviceCoverage',[[],[0,'1','0',1,'auto[bypassRegister]'],[0,'1','0',1,'auto[userDefinedRegister]'],[0,'1','10',,'auto[boundaryScanRegisters]']],[]],
+c1362:[4,'JtagTestVector_CP',[],,'1361',1,1,'JtagControllerDeviceCoverGroup','1349','/JtagControllerDevicePkg/JtagControllerDeviceCoverage',[[],[0,'1','9',,'low_range'],[0,'1','0',1,'mid_range'],[0,'1','9',,'high_range']],[]],
+c1363:[4,'JTAG_TESTVECTOR_WIDTH',[],,'1361',1,1,'JtagControllerDeviceCoverGroup','1349','/JtagControllerDevicePkg/JtagControllerDeviceCoverage',[[],[0,'1','0',1,'TDI_WIDTH_8'],[0,'1','0',1,'TDI_WIDTH_16'],[0,'1','0',1,'TDI_WIDTH_24'],[0,'1','10',,'TDI_WIDTH_32']],[]],
+c1364:[4,'JTAG_INSTRUCTION_WIDTH',[],,'1361',1,1,'JtagControllerDeviceCoverGroup','1349','/JtagControllerDevicePkg/JtagControllerDeviceCoverage',[[],[0,'1','10',,'INSTRUCTION_WIDTH_3'],[0,'1','0',1,'INSTRUCTION_WIDTH_4'],[0,'1','0',1,'INSTRUCTION_WIDTH_5']],[]],
+c1365:[4,'JTAG_INSTRUCTION',[],,'1361',1,1,'JtagControllerDeviceCoverGroup','1349','/JtagControllerDevicePkg/JtagControllerDeviceCoverage',[[],[0,'1','0',1,'auto[bypassRegister]'],[0,'1','0',1,'auto[userDefinedRegister]'],[0,'1','10',,'auto[boundaryScanRegisters]']],[]],
+c1892:[4,'JtagTestVector_CP',[],,'1891',1,1,'JtagTargetDeviceCoverGroup','1881','work.JtagTargetDevicePkg::JtagTargetDeviceCoverage',[[],[0,'1','9',,'low_range'],[0,'1','0',1,'mid_range'],[0,'1','9',,'high_range']],[]],
+c1893:[4,'JTAG_TESTVECTOR_WIDTH',[],,'1891',1,1,'JtagTargetDeviceCoverGroup','1881','work.JtagTargetDevicePkg::JtagTargetDeviceCoverage',[[],[0,'1','0',1,'TDO_WIDTH_8'],[0,'1','0',1,'TDO_WIDTH_16'],[0,'1','0',1,'TDO_WIDTH_24'],[0,'1','10',,'TDI_WIDTH_32']],[]],
+c1894:[4,'JTAG_INSTRUCTION_WIDTH',[],,'1891',1,1,'JtagTargetDeviceCoverGroup','1881','work.JtagTargetDevicePkg::JtagTargetDeviceCoverage',[[],[0,'1','10',,'INSTRUCTION_WIDTH_3'],[0,'1','0',1,'INSTRUCTION_WIDTH_4'],[0,'1','0',1,'INSTRUCTION_WIDTH_5']],[]],
+c1895:[4,'JTAG_INSTRUCTION',[],,'1891',1,1,'JtagTargetDeviceCoverGroup','1881','work.JtagTargetDevicePkg::JtagTargetDeviceCoverage',[[],[0,'1','0',1,'auto[bypassRegister]'],[0,'1','0',1,'auto[userDefinedRegister]'],[0,'1','10',,'auto[boundaryScanRegisters]']],[]],
+c2118:[4,'JtagTestVector_CP',[],,'2117',1,1,'JtagControllerDeviceCoverGroup','2105','work.JtagControllerDevicePkg::JtagControllerDeviceCoverage',[[],[0,'1','9',,'low_range'],[0,'1','0',1,'mid_range'],[0,'1','9',,'high_range']],[]],
+c2119:[4,'JTAG_TESTVECTOR_WIDTH',[],,'2117',1,1,'JtagControllerDeviceCoverGroup','2105','work.JtagControllerDevicePkg::JtagControllerDeviceCoverage',[[],[0,'1','0',1,'TDI_WIDTH_8'],[0,'1','0',1,'TDI_WIDTH_16'],[0,'1','0',1,'TDI_WIDTH_24'],[0,'1','10',,'TDI_WIDTH_32']],[]],
+c2120:[4,'JTAG_INSTRUCTION_WIDTH',[],,'2117',1,1,'JtagControllerDeviceCoverGroup','2105','work.JtagControllerDevicePkg::JtagControllerDeviceCoverage',[[],[0,'1','10',,'INSTRUCTION_WIDTH_3'],[0,'1','0',1,'INSTRUCTION_WIDTH_4'],[0,'1','0',1,'INSTRUCTION_WIDTH_5']],[]],
+c2121:[4,'JTAG_INSTRUCTION',[],,'2117',1,1,'JtagControllerDeviceCoverGroup','2105','work.JtagControllerDevicePkg::JtagControllerDeviceCoverage',[[],[0,'1','0',1,'auto[bypassRegister]'],[0,'1','0',1,'auto[userDefinedRegister]'],[0,'1','10',,'auto[boundaryScanRegisters]']],[]],
+dummyEnd:0
+};
+processCovergroupsData(g_data);

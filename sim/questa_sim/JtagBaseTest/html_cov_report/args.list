@@ -1,0 +1,5 @@
+-html
+JtagBaseTest/JtagBaseTest_coverage.ucdb
+-htmldir
+JtagBaseTest/html_cov_report
+-details

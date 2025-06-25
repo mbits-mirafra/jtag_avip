@@ -1,0 +1,82 @@
+QuestaSim vlog 10.6c Compiler 2017.07 Jul 25 2017
+Start time: 12:43:29 on Jun 25,2025
+vlog -sv "+acc" "+cover" "+fcover" -l JtagCompile.log -f ../JtagCompile.f 
+-- Compiling package JtagGlobalPkg
+-- Compiling package JtagControllerDevicePkg
+** Note: (vlog-2286) ../../src/hvlTop/jtagControllerDeviceAgent/JtagControllerDevicePkg.sv(5): Using implicit +incdir+/tools/mentor/questasim_10.6c/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package JtagGlobalPkg
+** Warning: (vlog-2121) ../../src/hvlTop/jtagControllerDeviceAgent//JtagControllerDeviceSeqItemConverter.sv(52): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: (vlog-2121) ../../src/hvlTop/jtagControllerDeviceAgent//JtagControllerDeviceSeqItemConverter.sv(53): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: (vlog-2121) ../../src/hvlTop/jtagControllerDeviceAgent//JtagControllerDeviceSeqItemConverter.sv(54): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: (vlog-2121) ../../src/hvlTop/jtagControllerDeviceAgent//JtagControllerDeviceSeqItemConverter.sv(59): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: (vlog-2121) ../../src/hvlTop/jtagControllerDeviceAgent//JtagControllerDeviceSeqItemConverter.sv(60): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: (vlog-2121) ../../src/hvlTop/jtagControllerDeviceAgent//JtagControllerDeviceSeqItemConverter.sv(61): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: (vlog-2121) ../../src/hvlTop/jtagControllerDeviceAgent//JtagControllerDeviceSeqItemConverter.sv(67): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: (vlog-2121) ../../src/hvlTop/jtagControllerDeviceAgent//JtagControllerDeviceSeqItemConverter.sv(68): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: (vlog-2121) ../../src/hvlTop/jtagControllerDeviceAgent//JtagControllerDeviceSeqItemConverter.sv(69): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: (vlog-2121) ../../src/hvlTop/jtagControllerDeviceAgent//JtagControllerDeviceSeqItemConverter.sv(75): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: (vlog-2121) ../../src/hvlTop/jtagControllerDeviceAgent//JtagControllerDeviceSeqItemConverter.sv(76): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: (vlog-2121) ../../src/hvlTop/jtagControllerDeviceAgent//JtagControllerDeviceSeqItemConverter.sv(77): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+-- Compiling package JtagTargetDevicePkg
+-- Compiling package JtagControllerDeviceSequencePkg
+-- Importing package JtagControllerDevicePkg
+** Warning: ../../src/hvlTop/jtagControllerDeviceAgent/jtagControllerDeviceSequences//JtagControllerDevicePatternBasedSequence.sv(20): (vlog-2239) Treating stand-alone use of presumed external function as an implicit VOID cast.
+-- Compiling package JtagTargetDeviceSequencePkg
+-- Importing package JtagTargetDevicePkg
+-- Compiling package JtagEnvPkg
+-- Compiling package JtagVirtualSequencePkg
+-- Importing package JtagEnvPkg
+-- Importing package JtagControllerDeviceSequencePkg
+-- Importing package JtagTargetDeviceSequencePkg
+-- Compiling package JtagBaseTestPkg
+-- Importing package JtagVirtualSequencePkg
+-- Compiling package JtagInterface_sv_unit
+-- Importing package JtagGlobalPkg
+-- Compiling interface JtagIf
+-- Compiling package JtagControllerDeviceDriverBfm_sv_unit
+-- Importing package JtagGlobalPkg
+-- Compiling interface JtagControllerDeviceDriverBfm
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package JtagControllerDevicePkg
+-- Compiling package JtagControllerDeviceMonitorBfm_sv_unit
+-- Importing package JtagGlobalPkg
+-- Compiling interface JtagControllerDeviceMonitorBfm
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package JtagControllerDevicePkg
+-- Compiling module JtagControllerDeviceAgentBfm
+-- Compiling package JtagTargetDeviceDriverBfm_sv_unit
+-- Importing package JtagGlobalPkg
+-- Compiling interface JtagTargetDeviceDriverBfm
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package JtagTargetDevicePkg
+-- Compiling package JtagTargetDeviceMonitorBfm_sv_unit
+-- Importing package JtagGlobalPkg
+-- Compiling interface JtagTargetDeviceMonitorBfm
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package JtagTargetDevicePkg
+-- Compiling module JtagTargetDeviceAgentBfm
+-- Compiling module HdlTop
+-- Compiling module HvlTop
+-- Importing package JtagBaseTestPkg
+-- Importing package JtagControllerDevicePkg
+-- Importing package JtagEnvPkg
+-- Importing package JtagControllerDeviceSequencePkg
+-- Importing package JtagTargetDeviceSequencePkg
+-- Importing package JtagVirtualSequencePkg
+-- Compiling package JtagControllerDeviceAssertions_sv_unit
+-- Importing package JtagGlobalPkg
+-- Compiling interface JtagControllerDeviceAssertions
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package JtagControllerDevicePkg
+-- Compiling package JtagTargetDeviceAssertions_sv_unit
+-- Importing package JtagGlobalPkg
+-- Compiling interface JtagTargetDeviceAssertions
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package JtagTargetDevicePkg
+
+Top level modules:
+	HdlTop
+	HvlTop
+End time: 12:43:32 on Jun 25,2025, Elapsed time: 0:00:03
+Errors: 0, Warnings: 13
