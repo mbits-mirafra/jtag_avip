@@ -2,32 +2,32 @@
 
 #Simple Test
 
-JtagTdiWidth24Test.sv
-JtagTdiWidth16Test.sv
-JtagTdiWidth8Test.sv
-JtagTdiWidth32Test.sv
-JtagBaseTest.sv
-JtagTdiWidth16InstructionWidth3Test.sv
-JtagTdiWidth16InstructionWidth4Test.sv
-JtagTdiWidth24InstructionWidth3Test.sv
-JtagTdiWidth24InstructionWidth4Test.sv
-JtagTdiWidth8InstructionWidth3Test.sv
-JtagTdiWidth8InstructionWidth4Test.sv
-JtagTdiWidth32InstructionWidth3Test.sv
-JtagTdiWidth32InstructionWidth4Test.sv  
+JtagTdiWidth24Test
+JtagTdiWidth16Test
+JtagTdiWidth8Test
+JtagTdiWidth32Test
+JtagBaseTest
+JtagTdiWidth16InstructionWidth3Test
+JtagTdiWidth16InstructionWidth4Test
+JtagTdiWidth24InstructionWidth3Test
+JtagTdiWidth24InstructionWidth4Test
+JtagTdiWidth8InstructionWidth3Test
+JtagTdiWidth8InstructionWidth4Test
+JtagTdiWidth32InstructionWidth3Test
+JtagTdiWidth32InstructionWidth4Test  
 
-JtagTdiWidth8BypassRegisterTest.sv
-JtagTdiWidth16BypassRegisterTest.sv
-JtagTdiWidth24BypassRegisterTest.sv
-JtagTdiWidth32BypassRegisterTest.sv
+JtagTdiWidth8BypassRegisterTest
+JtagTdiWidth16BypassRegisterTest
+JtagTdiWidth24BypassRegisterTest
+JtagTdiWidth32BypassRegisterTest
 
 
-JtagTdiWidth16UDR.sv
-JtagTdiWidth8UDR.sv
-JtagTdiWidth24UDR.sv
-JtagTdiWidth32UDR.sv
+JtagTdiWidth16UDR
+JtagTdiWidth8UDR
+JtagTdiWidth24UDR
+JtagTdiWidth32UDR
 
-Jtag8BitPatternBasedTest.sv
-Jtag16BitPatternBasedTest.sv
-Jtag32BitPatternBasedTest.sv
-Jtag24BitPatternBasedTest.sv
+Jtag8BitPatternBasedTest
+Jtag16BitPatternBasedTest
+Jtag32BitPatternBasedTest
+Jtag24BitPatternBasedTest
