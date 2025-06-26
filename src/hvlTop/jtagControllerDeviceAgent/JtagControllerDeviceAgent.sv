@@ -48,6 +48,9 @@ function void  JtagControllerDeviceAgent ::build_phase (uvm_phase phase);
    jtagControllerDeviceCoverage = JtagControllerDeviceCoverage :: type_id :: create("jtagControllerDeviceCoverage",this);
   end
 
+  uvm_config_db#(JtagControllerDeviceAgentConfig)::set(uvm_root::get(), "*","JtagControllerDeviceAgentConfig",jtagControllerDeviceAgentConfig);
+    `uvm_info(get_type_name(), $sformatf("\nI2S_TRANSMITTER_AGENT_CONFIG\n%s",
+                 jtagControllerDeviceAgentConfig.sprint()),UVM_LOW);
   jtagControllerDeviceAnalysisPort = new("jtagControllerDeviceAnalysisPort",this);
 endfunction  : build_phase
 

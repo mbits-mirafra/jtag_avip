@@ -1,6 +1,9 @@
+
 //-------------------------------------------------------
 // Importing Jtag global package
 //-------------------------------------------------------
+`timescale 1ns/1ps
+
 import JtagGlobalPkg::*;
 
 //--------------------------------------------------------------------------------------------
@@ -29,6 +32,7 @@ interface JtagTargetDeviceDriverBfm (input  logic   clk,
   reg[(JTAGREGISTERWIDTH -1):0]registerBank[JtagInstructionOpcodeEnum];
   reg[4:0]instructionRegister;
   JtagInstructionOpcodeEnum jtagInstructionOpcode;
+  logic[4:1]firstInstructionOpcode;
   //Variable: name
   //Used to store the name of the interface
   string name = "JTAG_TargetDeviceDRIVER_BFM";
@@ -40,6 +44,7 @@ interface JtagTargetDeviceDriverBfm (input  logic   clk,
 
 
 task registeringData(reg[4:0]instructionRegister , logic dataIn,JtagConfigStruct jtagConfigStruct);
+    firstInstructionOpcode = jtagInstructionOpcode.first();
     for (int i=0;i<(jtagInstructionOpcode.num()) ;i++) begin
 
 
@@ -47,7 +52,7 @@ task registeringData(reg[4:0]instructionRegister , logic dataIn,JtagConfigStruct
 
         'd 5 : begin
            if(jtagInstructionOpcode == instructionRegister) begin
-             if(instructionRegister == jtagInstructionOpcode.first())
+             if(instructionRegister == firstInstructionOpcode)
                 begin
                   byPassRegister = dataIn;
                   Tdo  = byPassRegister ;
@@ -67,7 +72,7 @@ task registeringData(reg[4:0]instructionRegister , logic dataIn,JtagConfigStruct
 
         'd 4: begin
            if(jtagInstructionOpcode [3:0]== instructionRegister[4:1]) begin
-             if(instructionRegister[4:1] == jtagInstructionOpcode.first()[3:0])
+             if(instructionRegister[4:1] == firstInstructionOpcode[3:0])
                begin
                  byPassRegister = dataIn;
                  Tdo  = byPassRegister ;
@@ -88,7 +93,7 @@ task registeringData(reg[4:0]instructionRegister , logic dataIn,JtagConfigStruct
 
          'd 3: begin
              if(jtagInstructionOpcode [2:0]== instructionRegister[4:2]) begin
-                if(instructionRegister[4:2] == jtagInstructionOpcode.first()[2:0])
+                if(instructionRegister[4:2] == firstInstructionOpcode[2:0])
                   begin
                      byPassRegister = dataIn;
                      Tdo  = byPassRegister ;
@@ -114,8 +119,8 @@ task observeData(JtagConfigStruct jtagConfigStruct);
     for(int j=0 ; j< 62;j++)
       begin
         @(posedge clk);
-	
-	case(jtagTapState)
+ 
+ case(jtagTapState)
 
           jtagResetState :begin
 
@@ -301,3 +306,5 @@ task observeData(JtagConfigStruct jtagConfigStruct);
 
 
 endinterface : JtagTargetDeviceDriverBfm
+
+ 

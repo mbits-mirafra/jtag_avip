@@ -4,6 +4,7 @@
 // Description : Instantiates driver and monitor
 //--------------------------------------------------------------------------------------------
 
+`timescale 1ns/1ps
 module JtagControllerDeviceAgentBfm(JtagIf jtagIf);
 
   //-------------------------------------------------------

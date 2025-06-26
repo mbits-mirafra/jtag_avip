@@ -49,32 +49,32 @@ function void JtagControllerDeviceSeqItemConverter :: fromClass(input JtagContro
  
     'd 8: begin 
            case(jtagConfigStruct.jtagInstructionWidth)
-               'd 3 : jtagPacketStruct.jtagTms = {'b x ,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 7'b 0 , jtagPacketStruct.jtagTms[11:0]};
-	       'd 4 : jtagPacketStruct.jtagTms = {'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 7'b 0 , jtagPacketStruct.jtagTms[12:0]};
-	       'd 5 : jtagPacketStruct.jtagTms = {'b x ,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 7'b 0 , jtagPacketStruct.jtagTms[13:0]};
+               'd 3 : jtagPacketStruct.jtagTms = {32'b x ,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 7'b 0 , jtagPacketStruct.jtagTms[11:0]};
+	       'd 4 : jtagPacketStruct.jtagTms = {32'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 7'b 0 , jtagPacketStruct.jtagTms[12:0]};
+	       'd 5 : jtagPacketStruct.jtagTms = {32'b x ,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 7'b 0 , jtagPacketStruct.jtagTms[13:0]};
 	    endcase 
         end  
     'd 16: begin
        case(jtagConfigStruct.jtagInstructionWidth)
-         'd 3 : jtagPacketStruct.jtagTms = {'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 15'b 0 , jtagPacketStruct.jtagTms[11:0]};
-	 'd 4 : jtagPacketStruct.jtagTms = {'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 15'b 0 , jtagPacketStruct.jtagTms[12:0]};
-	 'd 5 : jtagPacketStruct.jtagTms = {'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 15'b 0 , jtagPacketStruct.jtagTms[13:0]};
+         'd 3 : jtagPacketStruct.jtagTms = {32'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 15'b 0 , jtagPacketStruct.jtagTms[11:0]};
+	 'd 4 : jtagPacketStruct.jtagTms = {32'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 15'b 0 , jtagPacketStruct.jtagTms[12:0]};
+	 'd 5 : jtagPacketStruct.jtagTms = {32'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 15'b 0 , jtagPacketStruct.jtagTms[13:0]};
        endcase
    end 
 
     'd 24: begin
         case(jtagConfigStruct.jtagInstructionWidth)
-           'd 3 : jtagPacketStruct.jtagTms = {'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}}, 23'b 0 , jtagPacketStruct.jtagTms[11:0]};
-           'd 4 : jtagPacketStruct.jtagTms = {'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 23'b 0 , jtagPacketStruct.jtagTms[12:0]};
-           'd 5 : jtagPacketStruct.jtagTms = {'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 23'b 0 , jtagPacketStruct.jtagTms[13:0]};
+           'd 3 : jtagPacketStruct.jtagTms = {32'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}}, 23'b 0 , jtagPacketStruct.jtagTms[11:0]};
+           'd 4 : jtagPacketStruct.jtagTms = {32'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 23'b 0 , jtagPacketStruct.jtagTms[12:0]};
+           'd 5 : jtagPacketStruct.jtagTms = {32'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 23'b 0 , jtagPacketStruct.jtagTms[13:0]};
        endcase
      end
 
       'd 32: begin
         case(jtagConfigStruct.jtagInstructionWidth)
-		'd 3 : jtagPacketStruct.jtagTms = {'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}}, 31'b 0 , jtagPacketStruct.jtagTms[11:0]};
-		'd 4 : jtagPacketStruct.jtagTms = {'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 31'b 0 , jtagPacketStruct.jtagTms[12:0]};
-		'd 5 : jtagPacketStruct.jtagTms = {'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 31'b 0 , jtagPacketStruct.jtagTms[13:0]};
+		'd 3 : jtagPacketStruct.jtagTms = {32'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}}, 31'b 0 , jtagPacketStruct.jtagTms[11:0]};
+		'd 4 : jtagPacketStruct.jtagTms = {32'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 31'b 0 , jtagPacketStruct.jtagTms[12:0]};
+		'd 5 : jtagPacketStruct.jtagTms = {32'b x,JTAGMOVETOIDLE,{JTAGREGISTERWIDTH{1'b 0}} , 31'b 0 , jtagPacketStruct.jtagTms[13:0]};
        endcase
      end
      

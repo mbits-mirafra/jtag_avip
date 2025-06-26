@@ -1,6 +1,8 @@
 `ifndef JTAGCONTROLLERDEVICEASSERTIONS_INCLUDED_
 `define JTAGCONTROLLERDEVICEASSERTIONS_INCLUDED_
 
+`timescale 1ns/1ps
+
 import JtagGlobalPkg::*;
 
 interface JtagControllerDeviceAssertions (input clk,
@@ -34,7 +36,9 @@ interface JtagControllerDeviceAssertions (input clk,
   JtagInstructionWidthEnum jtagInstructionWidth;
   JtagTestVectorWidthEnum jtagTestVectorWidth;
   JtagInstructionOpcodeEnum jtagInstruction;
- always @(posedge clk) begin 
+
+  initial begin
+  start_of_simulation_ph.wait_for_state(UVM_PHASE_STARTED);
   if(!(uvm_config_db #(JtagControllerDeviceAgentConfig) :: get(null , "" , "jtagControllerDeviceAgentConfig" ,jtagControllerDeviceAgentConfig)))
       `uvm_fatal("CONTROLLER DEVICE]" , "FAILED TO GET CONFIG")
 
@@ -44,8 +48,6 @@ interface JtagControllerDeviceAssertions (input clk,
       $display("THE INSTRUCTION  WIDTH IS %s",jtagInstructionWidth.name());
 
 end 
-
-
 
 
   always @(posedge  clk)

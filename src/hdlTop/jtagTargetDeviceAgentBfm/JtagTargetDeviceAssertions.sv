@@ -34,7 +34,8 @@ interface JtagTargetDeviceAssertions (input clk,
   JtagInstructionWidthEnum jtagInstructionWidth;
   JtagTestVectorWidthEnum jtagTestVectorWidth;
   JtagInstructionOpcodeEnum jtagInstruction;
- always @(posedge clk) begin 
+ initial begin 
+  start_of_simulation_ph.wait_for_state(UVM_PHASE_STARTED);
   if(!(uvm_config_db #(JtagTargetDeviceAgentConfig) :: get(null , "" , "jtagTargetDeviceAgentConfig" ,jtagTargetDeviceAgentConfig)))
       `uvm_fatal("CONTROLLER DEVICE]" , "FAILED TO GET CONFIG")   
       jtagTestVectorWidth = jtagTargetDeviceAgentConfig.jtagTestVectorWidth;
@@ -60,7 +61,7 @@ end
 
 
    property testWidthCheck;
-	  @(posedge clk) disable iff (!(startWidthCheck))
+   @(posedge clk) disable iff (!(startWidthCheck))
               ##1 (((width)== jtagTestVectorWidth));
   endproperty
 
@@ -74,3 +75,4 @@ end
 endinterface : JtagTargetDeviceAssertions
 
 `endif
+ 

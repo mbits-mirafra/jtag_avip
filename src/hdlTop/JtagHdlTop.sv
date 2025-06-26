@@ -50,6 +50,10 @@ module HdlTop;
     reset = 1'b1;
   end
 
+  initial begin
+    $dumpfile("waveform.vcd");      // name of the VCD file
+    $dumpvars(0,HdlTop);    // dump variables from the testbench top
+  end
   //-------------------------------------------------------
   // Jtag Interface Instantiation
   //-------------------------------------------------------
