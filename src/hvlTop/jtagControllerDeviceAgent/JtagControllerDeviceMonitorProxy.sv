@@ -38,17 +38,17 @@ endfunction : build_phase
 task JtagControllerDeviceMonitor :: run_phase(uvm_phase phase);
   super.run_phase(phase);
   forever begin 
-  JtagControllerDeviceConfigConverter :: fromClass (jtagControllerDeviceAgentConfig , jtagConfigStruct);
-  jtagPacketStruct.jtagTestVector=64'b x;
-  jtagControllerDeviceMonitorBfm.waitForReset();
-  jtagControllerDeviceMonitorBfm.startMonitoring(jtagPacketStruct,jtagConfigStruct);
-  JtagControllerDeviceSeqItemConverter :: toClass (jtagPacketStruct , jtagConfigStruct , jtagControllerDeviceTransaction);
+    JtagControllerDeviceConfigConverter :: fromClass (jtagControllerDeviceAgentConfig , jtagConfigStruct);
+    jtagPacketStruct.jtagTestVector=64'b x;
+    jtagControllerDeviceMonitorBfm.waitForReset();
+    jtagControllerDeviceMonitorBfm.startMonitoring(jtagPacketStruct,jtagConfigStruct);
+    JtagControllerDeviceSeqItemConverter :: toClass (jtagPacketStruct , jtagConfigStruct , jtagControllerDeviceTransaction);
   
-  $display("THE RECEIVED VECTOR IN CONTROLLER SIDE IS %b AND INSTRUCTION IS %b\n",jtagControllerDeviceTransaction.jtagTestVector,jtagControllerDeviceTransaction.jtagInstruction);
-  $display("****************************************************************************************************************************************************************");
+    $display("THE RECEIVED VECTOR IN CONTROLLER SIDE IS %b AND INSTRUCTION IS %b\n",jtagControllerDeviceTransaction.jtagTestVector,jtagControllerDeviceTransaction.jtagInstruction);
+    $display("****************************************************************************************************************************************************************");
 
-  jtagControllerDeviceMonitorAnalysisPort.write(jtagControllerDeviceTransaction);
-end 
+    jtagControllerDeviceMonitorAnalysisPort.write(jtagControllerDeviceTransaction);
+  end 
 endtask : run_phase
 
 `endif

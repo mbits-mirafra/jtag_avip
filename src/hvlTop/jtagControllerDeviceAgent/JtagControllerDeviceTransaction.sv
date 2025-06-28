@@ -6,7 +6,6 @@ class JtagControllerDeviceTransaction extends uvm_sequence_item;
   `uvm_object_utils(JtagControllerDeviceTransaction)
 
   rand logic[31:0]jtagTestVector;
-  //logic[61:0]jtagTms = 'b 011000000000000000000000000000000000111000000110;
   logic[4:0]jtagInstruction;
 
   extern function new(string name = "JtagControllerDeviceTransaction");
@@ -35,7 +34,7 @@ function bit JtagControllerDeviceTransaction :: do_compare(uvm_object rhs,uvm_co
   JtagControllerDeviceTransaction sourceObject;
 
   if(!($cast(sourceObject,rhs)))
-   `uvm_fatal("DO_COMPARE","THE TYPE OF SOURCE IS NOT COMPATIBLE")
+    `uvm_fatal("DO_COMPARE","THE TYPE OF SOURCE IS NOT COMPATIBLE")
 
   return (super.compare(rhs,comparer) && (this.jtagTestVector == sourceObject.jtagTestVector));
 endfunction : do_compare

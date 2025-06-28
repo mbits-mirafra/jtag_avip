@@ -28,9 +28,9 @@ endfunction : build_phase
 task JtagTargetDeviceDriver :: run_phase(uvm_phase phase);
   super.run_phase(phase);
   forever begin
-  JtagTargetDeviceConfigConverter ::fromClass(jtagTargetDeviceAgentConfig ,jtagConfigStruct);
-  jtagTargetDeviceDriverBfm.waitForReset();
-  jtagTargetDeviceDriverBfm.observeData(jtagConfigStruct);
+    JtagTargetDeviceConfigConverter ::fromClass(jtagTargetDeviceAgentConfig ,jtagConfigStruct);
+    jtagTargetDeviceDriverBfm.waitForReset();
+    jtagTargetDeviceDriverBfm.observeData(jtagConfigStruct);
   end 
 endtask : run_phase
 

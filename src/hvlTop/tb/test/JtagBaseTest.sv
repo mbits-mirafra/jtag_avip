@@ -72,7 +72,7 @@ task  JtagBaseTest :: run_phase(uvm_phase phase);
  
   phase.raise_objection(this);
   repeat( NO_OF_TESTS) begin 
-  jtagControllerDeviceTestingVirtualSequence.start(jtagEnv.jtagVirtualSequencer);
+    jtagControllerDeviceTestingVirtualSequence.start(jtagEnv.jtagVirtualSequencer);
   end 
   phase.drop_objection(this);
 

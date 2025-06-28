@@ -1,4 +1,3 @@
-
 //--------------------------------------------------------------------------------------------
 // Module      : jtag ControllerDevice Agent BFM
 // Description : Instantiates driver and monitor

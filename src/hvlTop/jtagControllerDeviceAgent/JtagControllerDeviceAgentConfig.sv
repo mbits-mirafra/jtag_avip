@@ -2,7 +2,6 @@
 `define JTAGCONTROLLERDEVICEAGENTCONFIG_INCLUDED_
 
 class JtagControllerDeviceAgentConfig extends uvm_object;
-
   `uvm_object_utils(JtagControllerDeviceAgentConfig)
 
   bit hasCoverage;

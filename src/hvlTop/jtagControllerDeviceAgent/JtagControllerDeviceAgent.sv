@@ -35,8 +35,6 @@ function void  JtagControllerDeviceAgent ::build_phase (uvm_phase phase);
   if(!(uvm_config_db #(JtagControllerDeviceAgentConfig) :: get(this ,"","jtagControllerDeviceAgentConfig",jtagControllerDeviceAgentConfig)))
     `uvm_fatal(get_type_name(),"FAILED TO GET AGENT CONFIG IN ControllerDevice")
 
-  
-
   if(jtagControllerDeviceAgentConfig.is_active == UVM_ACTIVE) begin 
     jtagControllerDeviceDriver = JtagControllerDeviceDriver :: type_id :: create("jtagControllerDeviceDriver",this);
     jtagControllerDeviceSequencer = JtagControllerDeviceSequencer :: type_id :: create("jtagControllerDeviceSequencer",this);

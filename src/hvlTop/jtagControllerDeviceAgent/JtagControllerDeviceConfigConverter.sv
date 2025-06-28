@@ -4,7 +4,7 @@
 class JtagControllerDeviceConfigConverter extends uvm_object;
   `uvm_object_utils(JtagControllerDeviceConfigConverter)
   extern function new(string name = "JtagControllerDeviceConfigConverter");
-  extern static function void fromClass(input JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig,                    output JtagConfigStruct jtagConfigStruct);
+  extern static function void fromClass(input JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig,output JtagConfigStruct jtagConfigStruct);
 
 endclass : JtagControllerDeviceConfigConverter 
 
@@ -12,11 +12,11 @@ function JtagControllerDeviceConfigConverter :: new(string name = "JtagControlle
   super.new(name);
 endfunction : new
 
-function void JtagControllerDeviceConfigConverter :: fromClass(input JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig,               output JtagConfigStruct jtagConfigStruct);
+function void JtagControllerDeviceConfigConverter :: fromClass(input JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig,output JtagConfigStruct jtagConfigStruct);
   jtagConfigStruct.jtagTestVectorWidth = jtagControllerDeviceAgentConfig.jtagTestVectorWidth;
   jtagConfigStruct.jtagInstructionWidth = jtagControllerDeviceAgentConfig.jtagInstructionWidth;
   for (int i=0; i<jtagControllerDeviceAgentConfig.jtagInstructionWidth;i++)
-   jtagConfigStruct.jtagInstructionOpcode[i] = jtagControllerDeviceAgentConfig.jtagInstructionOpcode[i];
+    jtagConfigStruct.jtagInstructionOpcode[i] = jtagControllerDeviceAgentConfig.jtagInstructionOpcode[i];
 endfunction :fromClass
 
 `endif
