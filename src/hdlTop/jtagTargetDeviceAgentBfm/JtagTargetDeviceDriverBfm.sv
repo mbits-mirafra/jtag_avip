@@ -104,7 +104,7 @@ interface JtagTargetDeviceDriverBfm (input  logic   clk,
 
   task observeData(JtagConfigStruct jtagConfigStruct);
     int  i,k ,m;
-    for(int j=0 ; j< 62;j++)begin
+    for(int j=0 ; j< TMS_WIDTH;j++)begin
       @(posedge clk);
       if(Trst) begin 
         jtagTapState = jtagResetState;
