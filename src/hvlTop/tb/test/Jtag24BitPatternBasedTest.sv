@@ -8,7 +8,7 @@ class Jtag24BitPatternBasedTest extends JtagBaseTest;
   extern virtual function void build_phase(uvm_phase phase);
   extern virtual task run_phase (uvm_phase phase);
 
-  JtagControllerDevicePatternBasedVirtualSequence jtagControllerDevicePatternBasedVirtualSequence;
+  JtagVirtualControllerDevicePatternBasedSequence jtagVirtualControllerDevicePatternBasedSequence;
 endclass : Jtag24BitPatternBasedTest
 
 function Jtag24BitPatternBasedTest :: new(string name = "Jtag24BitPatternBasedTest" , uvm_component parent);
@@ -25,12 +25,12 @@ function void Jtag24BitPatternBasedTest :: build_phase(uvm_phase phase);
 endfunction : build_phase
 
 task Jtag24BitPatternBasedTest :: run_phase(uvm_phase phase);
-  jtagControllerDevicePatternBasedVirtualSequence = JtagControllerDevicePatternBasedVirtualSequence :: type_id :: create("JtagControllerDevicePatternBasedVirtualSequence");
-  jtagControllerDevicePatternBasedVirtualSequence.setConfig(jtagEnvConfig.jtagControllerDeviceAgentConfig);
+  jtagVirtualControllerDevicePatternBasedSequence = JtagVirtualControllerDevicePatternBasedSequence :: type_id :: create("jtagVirtualControllerDevicePatternBasedSequence");
+  jtagVirtualControllerDevicePatternBasedSequence.setConfig(jtagEnvConfig.jtagControllerDeviceAgentConfig);
  
   phase.raise_objection(this);
   repeat( NO_OF_TESTS) begin 
-    jtagControllerDevicePatternBasedVirtualSequence.start(jtagEnv.jtagVirtualSequencer);
+    jtagVirtualControllerDevicePatternBasedSequence.start(jtagEnv.jtagVirtualSequencer);
   end 
   phase.drop_objection(this);
 
