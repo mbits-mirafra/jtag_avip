@@ -1,17 +1,17 @@
-`ifndef JTAGControllerDeviceTESTINGVIRTUALSEQUENCE_INCLUDED_
-`define JTAGControllerDeviceTESTINGVIRTUALSEQUENCE_INCLUDED_
+`ifndef JTAGCONTROLLERDEVICETESTINGVIRTUALSEQUENCE_INCLUDED_
+`define JTAGCONTROLLERDEVICETESTINGVIRTUALSEQUENCE_INCLUDED_
 
-class JtagControllerDeviceTestingVirtualSequence extends JtagVirtualBaseSequence;
+class JtagVirtualControllerDeviceTestingSequence extends JtagVirtualBaseSequence;
   `uvm_object_utils(JtagControllerDeviceTestingVirtualSequence)
 
   JtagControllerDeviceTestVectorSequence jtagControllerDeviceTestVectorSequence;
   JtagTargetDeviceBaseSequence  jtagTargetDeviceBaseSequence;
   JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig;
 
-  extern function new(string name = "JtagControllerDeviceTestingVirtualSequence");
+  extern function new(string name = "JtagVirtualControllerDeviceTestingSequence");
   extern virtual task body();
   extern task setConfig(JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig);
-endclass : JtagControllerDeviceTestingVirtualSequence 
+endclass : JtagVirtualControllerDeviceTestingSequence 
 
 
 function JtagControllerDeviceTestingVirtualSequence ::new(string name = "JtagControllerDeviceTestingVirtualSequence");
