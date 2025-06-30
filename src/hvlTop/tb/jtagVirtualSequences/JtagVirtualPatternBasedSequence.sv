@@ -1,21 +1,20 @@
+`ifndef JTAGCONTROLLERDEVICEPATTERNBASEDVIRTUALSEQUENCE_INCLUDED_
+`define JTAGCONTROLLERDEVICEPATTERNBASEDVIRTUALSEQUENCE_INCLUDED_
 
-`ifndef JTAGControllerDevicePATTERNBASEDVIRTUALSEQUENCE_INCLUDED_
-`define JTAGControllerDevicePATTERNBASEDVIRTUALSEQUENCE_INCLUDED_
-
-class JtagControllerDevicePatternBasedVirtualSequence extends JtagVirtualBaseSequence;
-  `uvm_object_utils(JtagControllerDevicePatternBasedVirtualSequence)
+class JtagVirtualControllerDevicePatternBasedSequence extends JtagVirtualBaseSequence;
+  `uvm_object_utils(JtagVirtualControllerDevicePatternBasedSequence)
 
   JtagControllerDevicePatternBasedSequence jtagControllerDevicePatternBasedSequence;
   JtagTargetDeviceBaseSequence  jtagTargetDeviceBaseSequence;
   JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig;
 
-  extern function new(string name = "JtagControllerDevicePatternBasedVirtualSequence");
+  extern function new(string name = "JtagVirtualControllerDevicePatternBasedSequence");
   extern virtual task body();
   extern task setConfig(JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig);
-endclass : JtagControllerDevicePatternBasedVirtualSequence 
+endclass : JtagVirtualControllerDevicePatternBasedSequence 
 
 
-function JtagControllerDevicePatternBasedVirtualSequence ::new(string name = "JtagControllerDevicePatternBasedVirtualSequence");
+function JtagControllerDevicePatternBasedVirtualSequence ::new(string name = "JtagVirtualControllerDevicePatternBasedSequence");
   super.new(name);
 endfunction  : new
 
