@@ -23,12 +23,12 @@ function void JtagTdiWidth24InstructionWidth3Test :: build_phase(uvm_phase phase
 endfunction : build_phase
 
 task JtagTdiWidth24InstructionWidth3Test :: run_phase(uvm_phase phase);
-  jtagControllerDeviceTestingVirtualSequence = JtagControllerDeviceTestingVirtualSequence :: type_id :: create("JtagControllerDeviceTestingVirtualSequence");
-  jtagControllerDeviceTestingVirtualSequence.setConfig(jtagEnvConfig.jtagControllerDeviceAgentConfig);
+  jtagVirtualControllerDeviceTestingSequence = JtagVirtualControllerDeviceTestingSequence :: type_id :: create("jtagVirtualControllerDeviceTestingSequence");
+  jtagVirtualControllerDeviceTestingSequence.setConfig(jtagEnvConfig.jtagControllerDeviceAgentConfig);
  
   phase.raise_objection(this);
   repeat( NO_OF_TESTS) begin 
-    jtagControllerDeviceTestingVirtualSequence.start(jtagEnv.jtagVirtualSequencer);
+    jtagVirtualControllerDeviceTestingSequence.start(jtagEnv.jtagVirtualSequencer);
   end 
   phase.drop_objection(this);
 
