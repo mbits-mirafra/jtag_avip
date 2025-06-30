@@ -24,7 +24,7 @@ function void JtagTdiWidth8UDR :: build_phase(uvm_phase phase);
 endfunction : build_phase
 
 task  JtagTdiWidth8UDR :: run_phase(uvm_phase phase);
-  jtagVirtualControllerDeviceTestingSequence = jtagVirtualControllerDeviceTestingSequence :: type_id :: create("jtagVirtualControllerDeviceTestingSequence");
+  jtagVirtualControllerDeviceTestingSequence = JtagVirtualControllerDeviceTestingSequence :: type_id :: create("jtagVirtualControllerDeviceTestingSequence");
   jtagVirtualControllerDeviceTestingSequence.setConfig(jtagEnvConfig.jtagControllerDeviceAgentConfig);
  
   phase.raise_objection(this);
