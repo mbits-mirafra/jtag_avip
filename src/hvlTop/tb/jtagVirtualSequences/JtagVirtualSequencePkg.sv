@@ -22,8 +22,8 @@ package JtagVirtualSequencePkg;
   //-------------------------------------------------------
 
   `include "JtagVirtualBaseSequence.sv"
-  `include "JtagControllerDeviceTestingVirtualSequence.sv"
-  `include "JtagPatternBasedVirtualSequence.sv"
+  `include "JtagVirtualControllerDeviceTestingSequence.sv"
+  `include "JtagVirtualPatternBasedSequence.sv"
 endpackage
 
 `endif
