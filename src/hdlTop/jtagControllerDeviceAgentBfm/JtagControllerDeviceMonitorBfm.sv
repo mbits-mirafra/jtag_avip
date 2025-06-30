@@ -12,7 +12,8 @@ import JtagGlobalPkg::*;
 interface JtagControllerDeviceMonitorBfm (input  logic   clk,
                                           input  logic   reset,
                                           input logic  Tdi,
-			                  input logic Tms);
+			                  input logic Tms,
+                                          input logic Trst);
 //-------------------------------------------------------
 // Importing uvm package file
 //-------------------------------------------------------
@@ -40,6 +41,10 @@ interface JtagControllerDeviceMonitorBfm (input  logic   clk,
     k=0;
     for(int j=0 ; j<$bits(jtagPacketStruct.jtagTms);j++)begin
       @(posedge clk);
+      if(Trst) begin
+        jtagTapState = jtagResetState;
+      end
+      else begin 
         case(jtagTapState)
 
           jtagResetState :begin 
@@ -193,7 +198,8 @@ interface JtagControllerDeviceMonitorBfm (input  logic   clk,
 	  end 
           
 	endcase  
-      end   
+      end 
+    end   
   endtask 
 	
 endinterface : JtagControllerDeviceMonitorBfm

@@ -20,8 +20,9 @@ endfunction : new
 
 
 function void JtagControllerDeviceSeqItemConverter :: fromClass(input JtagControllerDeviceTransaction jtagControllerDeviceTransaction ,input JtagConfigStruct jtagConfigStruct , output JtagPacketStruct jtagPacketStruct);
-
   int i=0;
+  
+  jtagPacketStruct.jtagRst = jtagControllerDeviceTransaction.jtagRst;
  
   for (int i=0;i<jtagConfigStruct.jtagTestVectorWidth;i++)
     jtagPacketStruct.jtagTestVector[i] = jtagControllerDeviceTransaction.jtagTestVector[i];

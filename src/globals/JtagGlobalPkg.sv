@@ -34,7 +34,7 @@ package JtagGlobalPkg;
 			 logic[4:0] jtagInstructionOpcode;}JtagConfigStruct;
  
  
-  typedef struct packed{logic[61:0] jtagTestVector; logic[4:0]jtagInstruction; logic[61:0]jtagTms;}JtagPacketStruct;
+  typedef struct packed{logic[61:0] jtagTestVector; logic[4:0]jtagInstruction; logic[61:0]jtagTms;logic jtagRst;}JtagPacketStruct;
 
   typedef enum{jtagResetState ,jtagIdleState,jtagDrScanState, jtagIrScanState,jtagCaptureIrState,jtagShiftIrState,jtagExit1IrState,jtagPauseIrState,jtagExit2IrState,jtagUpdateIrState,jtagCaptureDrState,jtagShiftDrState,jtagExit1DrState,jtagPauseDrState,jtagExit2DrState,jtagUpdateDrState}JtagTapStates;
 

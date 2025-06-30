@@ -7,7 +7,7 @@ class JtagControllerDeviceTransaction extends uvm_sequence_item;
 
   rand logic[31:0]jtagTestVector;
   logic[4:0]jtagInstruction;
-
+  logic jtagRst;
   extern function new(string name = "JtagControllerDeviceTransaction");
   extern function void do_copy(uvm_object rhs);
   extern function bit do_compare(uvm_object rhs , uvm_comparer comparer = null);

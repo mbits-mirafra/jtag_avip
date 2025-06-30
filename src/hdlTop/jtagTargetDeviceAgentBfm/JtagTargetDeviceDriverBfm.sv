@@ -15,6 +15,7 @@ interface JtagTargetDeviceDriverBfm (input  logic   clk,
                                      input  logic   reset,
                                      input logic Tdi,
                                      input logic Tms,
+                                     input logic Trst,
                                      output logic  Tdo);
 //-------------------------------------------------------
 // Importing uvm package file
@@ -36,11 +37,6 @@ interface JtagTargetDeviceDriverBfm (input  logic   clk,
 //Variable: name
 //Used to store the name of the interface
   string name = "JTAG_TargetDeviceDRIVER_BFM";
-  task waitForReset();
-    jtagTapState = jtagResetState;
-    Tdo = 'b x;
-    instructionRegister = 'b x;
-  endtask : waitForReset
 
 
   task registeringData(reg[4:0]instructionRegister , logic dataIn,JtagConfigStruct jtagConfigStruct);
@@ -108,9 +104,12 @@ interface JtagTargetDeviceDriverBfm (input  logic   clk,
 
   task observeData(JtagConfigStruct jtagConfigStruct);
     int  i,k ,m;
-      for(int j=0 ; j< 62;j++)begin
-        @(posedge clk);
- 
+    for(int j=0 ; j< 62;j++)begin
+      @(posedge clk);
+      if(Trst) begin 
+        jtagTapState = jtagResetState;
+      end 
+      else begin    
         case(jtagTapState)
 
           jtagResetState :begin
@@ -263,7 +262,8 @@ interface JtagTargetDeviceDriverBfm (input  logic   clk,
             end
           end
         endcase
-      end
+      end 
+    end
   endtask : observeData
 
 endinterface : JtagTargetDeviceDriverBfm

@@ -40,7 +40,6 @@ task JtagTargetDeviceMonitor :: run_phase(uvm_phase phase);
   forever begin 
     JtagTargetDeviceConfigConverter :: fromClass (jtagTargetDeviceAgentConfig , jtagConfigStruct);
     jtagPacketStruct.jtagTestVector = 64'b x;
-    jtagTargetDeviceMonitorBfm.waitForReset();
     jtagTargetDeviceMonitorBfm.startMonitoring(jtagPacketStruct,jtagConfigStruct);
     JtagTargetDeviceSeqItemConverter :: toClass (jtagPacketStruct , jtagConfigStruct , jtagTargetDeviceTransaction);
     $display("*****************************************************************************************************************************************************************************************\n");
