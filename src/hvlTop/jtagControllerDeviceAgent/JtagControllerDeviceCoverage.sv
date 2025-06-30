@@ -20,13 +20,13 @@ class JtagControllerDeviceCoverage extends uvm_subscriber#(JtagControllerDeviceT
 					       bins high_range = {[(2**24)+1 : 0]};}
    
     JTAG_TESTVECTOR_WIDTH : coverpoint jtagControllerDeviceAgentConfig.jtagTestVectorWidth{ bins TDI_WIDTH_8 = {testVectorWidth8Bit};
-     										  bins TDI_WIDTH_16 = {testVectorWidth16Bit};
-										  bins TDI_WIDTH_24 = {testVectorWidth24Bit};
-										  bins TDI_WIDTH_32 = {testVectorWidth32Bit};}
+     										            bins TDI_WIDTH_16 = {testVectorWidth16Bit};
+										            bins TDI_WIDTH_24 = {testVectorWidth24Bit};
+										            bins TDI_WIDTH_32 = {testVectorWidth32Bit};}
 
     JTAG_INSTRUCTION_WIDTH:coverpoint jtagControllerDeviceAgentConfig.jtagInstructionWidth{ bins INSTRUCTION_WIDTH_3 = {instructionWidth3Bit};
-                                                                                   bins INSTRUCTION_WIDTH_4 = {instructionWidth4Bit};
-										   bins INSTRUCTION_WIDTH_5 = {instructionWidth5Bit};}
+                                                                                            bins INSTRUCTION_WIDTH_4 = {instructionWidth4Bit};
+										            bins INSTRUCTION_WIDTH_5 = {instructionWidth5Bit};}
     JTAG_INSTRUCTION : coverpoint jtagControllerDeviceAgentConfig.jtagInstructionOpcode;
 
 
