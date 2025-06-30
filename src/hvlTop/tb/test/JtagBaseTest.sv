@@ -45,7 +45,7 @@ function void  JtagBaseTest :: setupJtagControllerDeviceAgentConfig();
   jtagEnvConfig.jtagControllerDeviceAgentConfig.jtagTestVectorWidth = testVectorWidth32Bit;
   jtagEnvConfig.jtagControllerDeviceAgentConfig.jtagInstructionWidth = instructionWidth3Bit;
   jtagEnvConfig.jtagControllerDeviceAgentConfig.jtagInstructionOpcode = boundaryScanRegisters;
-
+  jtagEnvConfig.jtagControllerDeviceAgentConfig.trstEnable = 1'b 0;
   uvm_config_db #(JtagControllerDeviceAgentConfig) :: set(null,"*", "jtagControllerDeviceAgentConfig",jtagEnvConfig.jtagControllerDeviceAgentConfig);
 
 endfunction : setupJtagControllerDeviceAgentConfig

@@ -11,6 +11,7 @@ class JtagControllerDeviceAgentConfig extends uvm_object;
   rand JtagInstructionOpcodeEnum jtagInstructionOpcode;
   int NumberOfTests;
   logic[31:0]patternNeeded;
+  bit trstEnable;
 
   extern function new(string name = "JtagControllerDeviceAgentConfig");
 

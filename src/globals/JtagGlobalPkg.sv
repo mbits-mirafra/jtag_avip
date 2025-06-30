@@ -15,6 +15,7 @@ package JtagGlobalPkg;
 
   parameter NO_OF_TESTS = 10;
 
+  
 
   typedef enum bit [5:0]{testVectorWidth8Bit= 8,
                          testVectorWidth16Bit = 16,
@@ -31,7 +32,7 @@ package JtagGlobalPkg;
 
   typedef struct packed {JtagTestVectorWidthEnum jtagTestVectorWidth;
                          JtagInstructionWidthEnum jtagInstructionWidth;
-			 logic[4:0] jtagInstructionOpcode;}JtagConfigStruct;
+			 logic[4:0] jtagInstructionOpcode;logic trstEnable;}JtagConfigStruct;
  
  
   typedef struct packed{logic[61:0] jtagTestVector; logic[4:0]jtagInstruction; logic[61:0]jtagTms;logic jtagRst;}JtagPacketStruct;

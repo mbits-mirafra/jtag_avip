@@ -15,6 +15,7 @@ endfunction : new
 function void JtagControllerDeviceConfigConverter :: fromClass(input JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig,output JtagConfigStruct jtagConfigStruct);
   jtagConfigStruct.jtagTestVectorWidth = jtagControllerDeviceAgentConfig.jtagTestVectorWidth;
   jtagConfigStruct.jtagInstructionWidth = jtagControllerDeviceAgentConfig.jtagInstructionWidth;
+  jtagConfigStruct.trstEnable = jtagControllerDeviceAgentConfig.trstEnable;
   for (int i=0; i<jtagControllerDeviceAgentConfig.jtagInstructionWidth;i++)
     jtagConfigStruct.jtagInstructionOpcode[i] = jtagControllerDeviceAgentConfig.jtagInstructionOpcode[i];
 endfunction :fromClass
