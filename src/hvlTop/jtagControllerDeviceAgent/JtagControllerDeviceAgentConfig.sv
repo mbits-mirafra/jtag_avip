@@ -2,7 +2,6 @@
 `define JTAGCONTROLLERDEVICEAGENTCONFIG_INCLUDED_
 
 class JtagControllerDeviceAgentConfig extends uvm_object;
-
   `uvm_object_utils(JtagControllerDeviceAgentConfig)
 
   bit hasCoverage;
@@ -12,6 +11,7 @@ class JtagControllerDeviceAgentConfig extends uvm_object;
   rand JtagInstructionOpcodeEnum jtagInstructionOpcode;
   int NumberOfTests;
   logic[31:0]patternNeeded;
+  bit trstEnable;
 
   extern function new(string name = "JtagControllerDeviceAgentConfig");
 

@@ -36,8 +36,7 @@ task JtagControllerDeviceDriver :: run_phase(uvm_phase phase);
  
   $display("\nTHE CONFIG FOR THE CONTROLLER DEVICE ARE: \nTHE TEST VECTOR WIDTH IS %0d \nTHE INSTRUCTION WIDTH IS %0d\n",jtagConfigStruct.jtagTestVectorWidth,jtagConfigStruct.jtagInstructionWidth); 
   JtagControllerDeviceSeqItemConverter :: fromClass(req ,jtagConfigStruct,jtagPacketStruct);
-  $display("************************************************************************************************************************************************************************************************************\n \t \t THE SENT SENT FROM CONTROLLER DEVICE IS %b \n \t \t THE TMS BEING SENT IS %b \n************************************************************************************************************************************************************************************************************\n",jtagPacketStruct.jtagTestVector,jtagPacketStruct.jtagTms);
-  jtagControllerDeviceDriverBfm.waitForReset();
+  $display("************************************************************************************************************************************************************************************************************\n \t \t THE TDI SENT FROM CONTROLLER DEVICE IS %b \n \t \t THE TMS BEING SENT IS %b \n************************************************************************************************************************************************************************************************************\n",jtagPacketStruct.jtagTestVector,jtagPacketStruct.jtagTms);
   jtagControllerDeviceDriverBfm.DriveToBfm(jtagPacketStruct,jtagConfigStruct); 
   
   seq_item_port.item_done(rsp);

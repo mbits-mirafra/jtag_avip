@@ -2,7 +2,6 @@
 `define JTAGTARGETDEVICETRANSACTION_INCLUDED_
 
 class JtagTargetDeviceTransaction extends uvm_sequence_item;
-
   `uvm_object_utils(JtagTargetDeviceTransaction)
 
   logic[31:0]jtagTestVector;
@@ -33,7 +32,7 @@ function bit  JtagTargetDeviceTransaction :: do_compare(uvm_object rhs,uvm_compa
   JtagTargetDeviceTransaction sourceObject;
 
   if(!($cast(sourceObject,rhs)))
-   `uvm_fatal("DO_COMPARE","THE TYPE OF SOURCE IS NOT COMPATIBLE")
+    `uvm_fatal("DO_COMPARE","THE TYPE OF SOURCE IS NOT COMPATIBLE")
 
   return (super.compare(rhs,comparer) && (this.jtagTestVector == sourceObject.jtagTestVector));
 endfunction : do_compare

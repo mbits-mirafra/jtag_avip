@@ -16,5 +16,7 @@ interface JtagIf (input clk, input reset);
   logic Tdo;
 
   logic Tms;
+
+  logic Trst;
   
 endinterface : JtagIf 

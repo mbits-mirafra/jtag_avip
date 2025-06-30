@@ -20,13 +20,13 @@ module JtagTargetDeviceAgentBfm(JtagIf jtagIf);
   // TargetDevice driver bfm instantiation
   //-------------------------------------------------------
   
-  JtagTargetDeviceDriverBfm jtagTargetDeviceDriverBfm (.clk(jtagIf.clk),.Tdo(jtagIf.Tdo),.reset(jtagIf.reset),.Tms(jtagIf.Tms),.Tdi(jtagIf.Tdi));
+  JtagTargetDeviceDriverBfm jtagTargetDeviceDriverBfm (.clk(jtagIf.clk),.Tdo(jtagIf.Tdo),.reset(jtagIf.reset),.Tms(jtagIf.Tms),.Tdi(jtagIf.Tdi),.Trst(jtagIf.Trst));
 
   //-------------------------------------------------------
   // TargetDevice monitor bfm instantiation
   //-------------------------------------------------------
   
-  JtagTargetDeviceMonitorBfm jtagTargetDeviceMonitorBfm (.clk(jtagIf.clk),.Tdi(jtagIf.Tdi),.Tdo(jtagIf.Tdo),.reset(jtagIf.reset),.Tms(jtagIf.Tms));
+  JtagTargetDeviceMonitorBfm jtagTargetDeviceMonitorBfm (.clk(jtagIf.clk),.Tdi(jtagIf.Tdi),.Tdo(jtagIf.Tdo),.reset(jtagIf.reset),.Tms(jtagIf.Tms),.Trst(jtagIf.Trst));
 
 
   //-------------------------------------------------------

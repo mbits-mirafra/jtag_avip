@@ -1,4 +1,3 @@
-
 //--------------------------------------------------------------------------------------------
 // Module      : jtag ControllerDevice Agent BFM
 // Description : Instantiates driver and monitor
@@ -22,13 +21,13 @@ module JtagControllerDeviceAgentBfm(JtagIf jtagIf);
   // ControllerDevice driver bfm instantiation
   //-------------------------------------------------------
   
-  JtagControllerDeviceDriverBfm jtagControllerDeviceDriverBfm (.clk(jtagIf.clk),.Tdi(jtagIf.Tdi),.reset(jtagIf.reset) ,.Tms(jtagIf.Tms));
+  JtagControllerDeviceDriverBfm jtagControllerDeviceDriverBfm (.clk(jtagIf.clk),.Tdi(jtagIf.Tdi),.reset(jtagIf.reset) ,.Tms(jtagIf.Tms),.Trst(jtagIf.Trst));
 
   //-------------------------------------------------------
   // ControllerDevice monitor bfm instantiation
   //-------------------------------------------------------
   
-  JtagControllerDeviceMonitorBfm jtagControllerDeviceMonitorBfm (.clk(jtagIf.clk),.Tdi(jtagIf.Tdi),.reset(jtagIf.reset),.Tms(jtagIf.Tms));
+  JtagControllerDeviceMonitorBfm jtagControllerDeviceMonitorBfm (.clk(jtagIf.clk),.Tdi(jtagIf.Tdi),.reset(jtagIf.reset),.Tms(jtagIf.Tms),.Trst(jtagIf.Trst));
 
 
   //-------------------------------------------------------

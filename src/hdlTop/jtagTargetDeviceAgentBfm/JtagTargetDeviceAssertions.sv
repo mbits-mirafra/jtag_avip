@@ -6,16 +6,12 @@ import JtagGlobalPkg::*;
 interface JtagTargetDeviceAssertions (input clk,
                                          input reset,
                                          input Tdo,
-                                         input Tms
-                                        );
+                                         input Tms);
  
-
-
   import uvm_pkg::*;
   `include "uvm_macros.svh"; 
  
-
-    initial begin
+  initial begin
     `uvm_info("JtagTargetDeviceAssertions","JtagTargetDeviceAssertions",UVM_LOW);
   end
 
@@ -34,43 +30,39 @@ interface JtagTargetDeviceAssertions (input clk,
   JtagInstructionWidthEnum jtagInstructionWidth;
   JtagTestVectorWidthEnum jtagTestVectorWidth;
   JtagInstructionOpcodeEnum jtagInstruction;
- initial begin 
-  start_of_simulation_ph.wait_for_state(UVM_PHASE_STARTED);
-  if(!(uvm_config_db #(JtagTargetDeviceAgentConfig) :: get(null , "" , "jtagTargetDeviceAgentConfig" ,jtagTargetDeviceAgentConfig)))
+ 
+  initial begin 
+    start_of_simulation_ph.wait_for_state(UVM_PHASE_STARTED);
+    if(!(uvm_config_db #(JtagTargetDeviceAgentConfig) :: get(null , "" , "jtagTargetDeviceAgentConfig" ,jtagTargetDeviceAgentConfig)))
       `uvm_fatal("CONTROLLER DEVICE]" , "FAILED TO GET CONFIG")   
-      jtagTestVectorWidth = jtagTargetDeviceAgentConfig.jtagTestVectorWidth;
-end 
+    jtagTestVectorWidth = jtagTargetDeviceAgentConfig.jtagTestVectorWidth;
+  end 
 
-
-
-
-  always @(posedge  clk)
-    begin
-     if((!($isunknown(Tdo))) && (width <jtagTargetDeviceAgentConfig.jtagTestVectorWidth) && (!($isunknown(Tms)))) begin 
-       width++;
-       $display("THE WIDTH IS %0d and serial in is %0b",width,Tdo);
-
+  always @(posedge  clk)begin
+    if((!($isunknown(Tdo))) && (width <jtagTargetDeviceAgentConfig.jtagTestVectorWidth) && (!($isunknown(Tms)))) begin 
+      width++;
+      $display("THE WIDTH IS %0d and serial in is %0b",width,Tdo);
     end 
 
-     if(width == jtagTargetDeviceAgentConfig.jtagTestVectorWidth && (!($isunknown(Tms)))) begin 
-       startWidthCheck = 1'b 1;
-       repeat(2) @(posedge clk);
-        startWidthCheck = 1'b 0;
-      end 
+    if(width == jtagTargetDeviceAgentConfig.jtagTestVectorWidth && (!($isunknown(Tms)))) begin 
+      startWidthCheck = 1'b 1;
+      repeat(2) @(posedge clk);
+      startWidthCheck = 1'b 0;
     end 
+  end 
 
 
-   property testWidthCheck;
-   @(posedge clk) disable iff (!(startWidthCheck))
-              ##1 (((width)== jtagTestVectorWidth));
+  property testWidthCheck;
+    @(posedge clk) disable iff (!(startWidthCheck))
+    ##1 (((width)== jtagTestVectorWidth));
   endproperty
 
   assert property (testWidthCheck) begin
-  $info("******************************************************************************************************\n [TargetDevice ASSERTION] \n TargetDevice TDI WIDTH IS VALID =%0d \n************************************************************************************************************",width);
-  width= 1'b 0;
+    $info("******************************************************************************************************\n [TargetDevice ASSERTION] \n TargetDevice TDI WIDTH IS VALID =%0d \n************************************************************************************************************",width);
+    width= 1'b 0;
   end
   else
- $error("\n \n \n WIDTH MISMATCH \n \n \n");
+    $error("\n \n \n WIDTH MISMATCH \n \n \n");
 
 endinterface : JtagTargetDeviceAssertions
 
