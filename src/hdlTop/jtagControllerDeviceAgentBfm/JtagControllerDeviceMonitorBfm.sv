@@ -20,7 +20,7 @@ interface JtagControllerDeviceMonitorBfm (input  logic   clk,
   import uvm_pkg::*;
   `include "uvm_macros.svh"
   JtagTapStates jtagTapState;	
-  reg[31:0] temp;
+  reg[TMS_WIDTH-1:0] temp;
   //-------------------------------------------------------
   // Importing the Transmitter package file
   //-------------------------------------------------------
@@ -91,7 +91,8 @@ interface JtagControllerDeviceMonitorBfm (input  logic   clk,
 	    else if(Tms ==0) begin 
               jtagTapState = jtagShiftDrState;      
 	    end
-            jtagPacketStruct.jtagTestVector = {Tdi , jtagPacketStruct.jtagTestVector[61:1]};        
+            temp = {Tdi,temp[TMS_WIDTH-1:1]};
+            jtagPacketStruct.jtagTestVector = temp;   
 	    $display("### CONTROLLER MONITOR### THE SERIAL DATA OBTAINED HERE IS %b COMPLETE VECTOR IS %b AT %0t \n",Tdi,jtagPacketStruct.jtagTestVector,$time);
 	  end 
           
