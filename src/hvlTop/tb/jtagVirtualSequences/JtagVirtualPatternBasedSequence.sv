@@ -14,16 +14,16 @@ class JtagVirtualControllerDevicePatternBasedSequence extends JtagVirtualBaseSeq
 endclass : JtagVirtualControllerDevicePatternBasedSequence 
 
 
-function JtagControllerDevicePatternBasedVirtualSequence ::new(string name = "JtagVirtualControllerDevicePatternBasedSequence");
+function JtagVirtualControllerDevicePatternBasedSequence ::new(string name = "JtagVirtualControllerDevicePatternBasedSequence");
   super.new(name);
 endfunction  : new
 
-task JtagControllerDevicePatternBasedVirtualSequence :: body();
+task JtagVirtualControllerDevicePatternBasedSequence :: body();
   super.body();
   `uvm_do_on_with(jtagControllerDevicePatternBasedSequence,p_sequencer.jtagControllerDeviceSequencer,{patternNeeded == jtagControllerDeviceAgentConfig.patternNeeded;})
 endtask : body 
 
-task JtagControllerDevicePatternBasedVirtualSequence :: setConfig(JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig);
+task JtagVirtualControllerDevicePatternBasedSequence :: setConfig(JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig);
   this.jtagControllerDeviceAgentConfig = jtagControllerDeviceAgentConfig;
 endtask : setConfig
  
