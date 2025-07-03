@@ -28,7 +28,10 @@ task  JtagTdiWidth8BypassRegisterTest :: run_phase(uvm_phase phase);
   jtagVirtualControllerDeviceTestingSequence.setConfig(jtagEnvConfig.jtagControllerDeviceAgentConfig);
  
   phase.raise_objection(this);
-  repeat( NO_OF_TESTS) begin 
+  jtagVirtualControllerDeviceTestingSequence.trstEnable = 'b 0;
+  jtagVirtualControllerDeviceTestingSequence.start(jtagEnv.jtagVirtualSequencer);
+  jtagVirtualControllerDeviceTestingSequence.trstEnable = 'b 1;
+  repeat( NO_OF_TESTS) begin
     jtagVirtualControllerDeviceTestingSequence.start(jtagEnv.jtagVirtualSequencer);
   end 
   phase.drop_objection(this);

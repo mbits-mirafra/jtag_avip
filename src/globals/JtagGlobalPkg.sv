@@ -3,7 +3,7 @@
 
 package JtagGlobalPkg;
  
-  parameter JTAGREGISTERWIDTH =10;
+  parameter JTAGREGISTERWIDTH =32;
   
   parameter [4:0] JTAGMOVETILLSHIFTIR = 5'b 00110;
   

@@ -45,7 +45,7 @@ function void  JtagBaseTest :: setupJtagControllerDeviceAgentConfig();
   jtagEnvConfig.jtagControllerDeviceAgentConfig.jtagTestVectorWidth = testVectorWidth32Bit;
   jtagEnvConfig.jtagControllerDeviceAgentConfig.jtagInstructionWidth = instructionWidth3Bit;
   jtagEnvConfig.jtagControllerDeviceAgentConfig.jtagInstructionOpcode = boundaryScanRegisters;
-  jtagEnvConfig.jtagControllerDeviceAgentConfig.trstEnable = 1'b 0;
+  //jtagEnvConfig.jtagControllerDeviceAgentConfig.trstEnable = 1'b 1;
   uvm_config_db #(JtagControllerDeviceAgentConfig) :: set(null,"*", "jtagControllerDeviceAgentConfig",jtagEnvConfig.jtagControllerDeviceAgentConfig);
 
 endfunction : setupJtagControllerDeviceAgentConfig
@@ -70,7 +70,11 @@ task  JtagBaseTest :: run_phase(uvm_phase phase);
   jtagVirtualControllerDeviceTestingSequence.setConfig(jtagEnvConfig.jtagControllerDeviceAgentConfig);
  
   phase.raise_objection(this);
-  repeat( NO_OF_TESTS) begin 
+  jtagVirtualControllerDeviceTestingSequence.trstEnable = 'b 0;
+  jtagVirtualControllerDeviceTestingSequence.start(jtagEnv.jtagVirtualSequencer);
+  jtagVirtualControllerDeviceTestingSequence.trstEnable = 'b 1;
+  repeat( NO_OF_TESTS) begin
+     jtagVirtualControllerDeviceTestingSequence.trstEnable = 'b 1; 
     jtagVirtualControllerDeviceTestingSequence.start(jtagEnv.jtagVirtualSequencer);
   end 
   phase.drop_objection(this);
