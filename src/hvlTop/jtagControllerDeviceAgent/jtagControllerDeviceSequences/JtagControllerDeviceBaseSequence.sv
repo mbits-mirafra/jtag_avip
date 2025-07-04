@@ -4,6 +4,7 @@ class JtagControllerDeviceBaseSequence extends uvm_sequence#(JtagControllerDevic
   `uvm_object_utils(JtagControllerDeviceBaseSequence) 
 
   rand int numberOfTests;
+  rand logic tresetEnable;
   extern function new(string name = "JtagControllerDeviceBaseSequence");
   extern virtual task body();
 

@@ -36,12 +36,14 @@ interface JtagControllerDeviceMonitorBfm (input  logic   clk,
 	
   
   task startMonitoring(inout JtagPacketStruct jtagPacketStruct,input JtagConfigStruct jtagConfigStruct);
-    int  i,k ,m;
-    m=0;
+    int  i,k ,count,m;
+    count=0;
     k=0;
+    m=0;
+    temp = 'b x;
     for(int j=0 ; j<$bits(jtagPacketStruct.jtagTms);j++)begin
       @(posedge clk);
-      if(Trst) begin
+      if(!Trst) begin
         jtagTapState = jtagResetState;
       end
       else begin 
@@ -84,15 +86,14 @@ interface JtagControllerDeviceMonitorBfm (input  logic   clk,
 	  end 
 	  
 	  jtagShiftDrState : begin 
-            $display("### CONTROLLER MONITOR ### IS IN SHIFT DR STATE AT %0t \n",$time);          
 	    if(Tms ==1) begin
               jtagTapState = jtagExit1DrState;
 	    end 
 	    else if(Tms ==0) begin 
               jtagTapState = jtagShiftDrState;      
 	    end
-            temp = {Tdi,temp[TMS_WIDTH-1:1]};
-            jtagPacketStruct.jtagTestVector = temp;   
+              temp = {Tdi,temp[TMS_WIDTH-1:1]};
+              jtagPacketStruct.jtagTestVector = temp;
 	    $display("### CONTROLLER MONITOR### THE SERIAL DATA OBTAINED HERE IS %b COMPLETE VECTOR IS %b AT %0t \n",Tdi,jtagPacketStruct.jtagTestVector,$time);
 	  end 
           
@@ -128,7 +129,7 @@ interface JtagControllerDeviceMonitorBfm (input  logic   clk,
               jtagTapState = jtagDrScanState;
 	    end  
 	    else if(Tms == 0) begin 
-	      jtagTapState = jtagIdleState;
+	      jtagTapState = jtagResetState;
 	    end 
 	  end 
 

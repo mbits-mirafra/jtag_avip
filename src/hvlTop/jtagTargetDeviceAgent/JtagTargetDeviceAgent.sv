@@ -43,7 +43,7 @@ function void JtagTargetDeviceAgent::build_phase(uvm_phase phase);
   jtagTargetDeviceMonitor = JtagTargetDeviceMonitor::type_id::create("jtagTargetDeviceMonitor", this);
   uvm_config_db#(JtagTargetDeviceAgentConfig)::set(uvm_root::get(), "*", "jtagTargetDeviceAgentConfig", jtagTargetDeviceAgentConfig);
   
-  `uvm_info(get_type_name(), $sformatf("\nI2S_TRANSMITTER_AGENT_CONFIG\n%s", jtagTargetDeviceAgentConfig.sprint()), UVM_LOW);
+  `uvm_info(get_type_name(), $sformatf("\nJTAG_TARGET_DEVICE_AGENT_CONFIG\n%s", jtagTargetDeviceAgentConfig.sprint()), UVM_LOW);
   
   jtagTargetDeviceAnalysisPort = new("jtagTargetDeviceAnalysisPort", this);
 endfunction : build_phase

@@ -3,7 +3,7 @@
 
 class JtagVirtualControllerDevicePatternBasedSequence extends JtagVirtualBaseSequence;
   `uvm_object_utils(JtagVirtualControllerDevicePatternBasedSequence)
-
+  logic trstEnable;
   JtagControllerDevicePatternBasedSequence jtagControllerDevicePatternBasedSequence;
   JtagTargetDeviceBaseSequence  jtagTargetDeviceBaseSequence;
   JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig;
@@ -20,7 +20,7 @@ endfunction  : new
 
 task JtagVirtualControllerDevicePatternBasedSequence :: body();
   super.body();
-  `uvm_do_on_with(jtagControllerDevicePatternBasedSequence,p_sequencer.jtagControllerDeviceSequencer,{patternNeeded == jtagControllerDeviceAgentConfig.patternNeeded;})
+  `uvm_do_on_with(jtagControllerDevicePatternBasedSequence,p_sequencer.jtagControllerDeviceSequencer,{patternNeeded == jtagControllerDeviceAgentConfig.patternNeeded;tresetEnable == trstEnable;})
 endtask : body 
 
 task JtagVirtualControllerDevicePatternBasedSequence :: setConfig(JtagControllerDeviceAgentConfig jtagControllerDeviceAgentConfig);

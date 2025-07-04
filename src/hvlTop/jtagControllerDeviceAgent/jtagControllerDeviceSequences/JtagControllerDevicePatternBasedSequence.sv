@@ -17,7 +17,7 @@ endfunction : new
 task JtagControllerDevicePatternBasedSequence :: body();
   super.body();
   req = JtagControllerDeviceTransaction :: type_id :: create("req");
-  req.randomize() with{jtagTestVector == patternNeeded;};
+  req.randomize() with{jtagTestVector == patternNeeded;trstEnable == tresetEnable;};
   req.print();
   start_item(req);
   finish_item(req);

@@ -41,7 +41,7 @@ interface JtagTargetDeviceMonitorBfm (input  logic   clk,
     for(int j=0 ; j<$bits(jtagPacketStruct.jtagTms);j++)begin
       @(posedge clk);
       $display("state of machine  is %s",jtagTapState.name());
-      if(Trst) begin 
+      if(!Trst) begin 
         jtagTapState = jtagResetState;
       end 
       else begin 
@@ -128,7 +128,7 @@ interface JtagTargetDeviceMonitorBfm (input  logic   clk,
               jtagTapState = jtagDrScanState;
 	    end  
 	    else if(Tms == 0) begin 
-	      jtagTapState = jtagIdleState;
+	      jtagTapState = jtagResetState;
 	    end 
 	  end 
 

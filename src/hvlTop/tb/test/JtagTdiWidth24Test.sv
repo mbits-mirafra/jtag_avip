@@ -26,9 +26,12 @@ task  JtagTdiWidth24Test :: run_phase(uvm_phase phase);
   jtagVirtualControllerDeviceTestingSequence.setConfig(jtagEnvConfig.jtagControllerDeviceAgentConfig);
  
   phase.raise_objection(this);
-  repeat( NO_OF_TESTS) begin 
+    jtagVirtualControllerDeviceTestingSequence.trstEnable = 'b 0;
     jtagVirtualControllerDeviceTestingSequence.start(jtagEnv.jtagVirtualSequencer);
-  end 
+    jtagVirtualControllerDeviceTestingSequence.trstEnable = 'b 1;
+    repeat( NO_OF_TESTS) begin
+      jtagVirtualControllerDeviceTestingSequence.start(jtagEnv.jtagVirtualSequencer);
+    end
   phase.drop_objection(this);
 
 endtask : run_phase

@@ -29,10 +29,14 @@ task Jtag16BitPatternBasedTest :: run_phase(uvm_phase phase);
   jtagVirtualControllerDevicePatternBasedSequence.setConfig(jtagEnvConfig.jtagControllerDeviceAgentConfig);
  
   phase.raise_objection(this);
+  jtagVirtualControllerDevicePatternBasedSequence.trstEnable = 'b 0;
+  jtagVirtualControllerDevicePatternBasedSequence.start(jtagEnv.jtagVirtualSequencer);
+  jtagVirtualControllerDevicePatternBasedSequence.trstEnable = 'b 1;
   repeat( NO_OF_TESTS) begin 
     jtagVirtualControllerDevicePatternBasedSequence.start(jtagEnv.jtagVirtualSequencer);
   end 
   phase.drop_objection(this);
-endtask : run_phase
 
+
+endtask :run_phase
 `endif

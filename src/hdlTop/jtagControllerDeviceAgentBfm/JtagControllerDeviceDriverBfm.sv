@@ -40,12 +40,13 @@ task DriveToBfm(JtagPacketStruct jtagPacketStruct , JtagConfigStruct jtagConfigS
   
   for(int j=0 ; j< $bits(jtagPacketStruct.jtagTms);j++)begin
     @(posedge clk) Tms = jtagPacketStruct.jtagTms[i++];
-    if(jtagPacketStruct.jtagRst) begin
+    if(!jtagPacketStruct.jtagRst) begin
       jtagTapState = jtagResetState;
-      Trst = 1'b 1;
+      Trst = 1'b 0;
       Tms = 1'b 1;
     end
-    else begin 
+    else begin
+      Trst = 1'b 1; 
       case(jtagTapState)
 
         jtagResetState :begin 
@@ -128,7 +129,7 @@ task DriveToBfm(JtagPacketStruct jtagPacketStruct , JtagConfigStruct jtagConfigS
             jtagTapState = jtagDrScanState;
 	  end  
 	  else if(Tms == 0) begin 
-	    jtagTapState = jtagIdleState;
+	    jtagTapState = jtagResetState;
 	  end 
         end 
 
